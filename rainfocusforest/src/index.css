@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Accent and shared tokens */
+    --accent: 255 213 79;
+    --radius: 12px;
+
+    /* Rainforest */
+    --rf-bg: 241 248 233;
+    --rf-surface: 255 255 255;
+    --rf-primary: 46 125 50;
+    --rf-secondary: 102 187 106;
+    --rf-text: 27 94 32;
+    --rf-text-2: 76 175 80;
+
+    /* Light */
+    --lt-bg: 250 250 250;
+    --lt-surface: 255 255 255;
+    --lt-primary: 25 118 210;
+    --lt-secondary: 144 202 249;
+    --lt-text: 33 33 33;
+    --lt-text-2: 117 117 117;
+
+    /* Night */
+    --nt-bg: 18 18 18;
+    --nt-surface: 30 30 30;
+    --nt-primary: 13 71 161;
+    --nt-secondary: 49 27 146;
+    --nt-text: 224 224 224;
+    --nt-text-2: 158 158 158;
+
+    /* Dark */
+    --dk-bg: 18 18 18;
+    --dk-surface: 28 28 28;
+    --dk-primary: 33 33 33;
+    --dk-secondary: 66 66 66;
+    --dk-text: 255 255 255;
+    --dk-text-2: 189 189 189;
+
+    /* Ocean */
+    --oc-bg: 225 245 254;
+    --oc-surface: 255 255 255;
+    --oc-primary: 2 136 209;
+    --oc-secondary: 79 195 247;
+    --oc-text: 1 87 155;
+    --oc-text-2: 2 119 189;
+  }
+}
+
+@layer utilities {
+  .theme-rainforest { --bg: var(--rf-bg); --surface: var(--rf-surface); --primary: var(--rf-primary); --secondary: var(--rf-secondary); --text: var(--rf-text); --text-2: var(--rf-text-2); }
+  .theme-light { --bg: var(--lt-bg); --surface: var(--lt-surface); --primary: var(--lt-primary); --secondary: var(--lt-secondary); --text: var(--lt-text); --text-2: var(--lt-text-2); }
+  .theme-night { --bg: var(--nt-bg); --surface: var(--nt-surface); --primary: var(--nt-primary); --secondary: var(--nt-secondary); --text: var(--nt-text); --text-2: var(--nt-text-2); }
+  .theme-dark { --bg: var(--dk-bg); --surface: var(--dk-surface); --primary: var(--dk-primary); --secondary: var(--dk-secondary); --text: var(--dk-text); --text-2: var(--dk-text-2); }
+  .theme-ocean { --bg: var(--oc-bg); --surface: var(--oc-surface); --primary: var(--oc-primary); --secondary: var(--oc-secondary); --text: var(--oc-text); --text-2: var(--oc-text-2); }
+
+  .bg-app { background-color: rgb(var(--bg)); }
+  .bg-surface { background-color: rgb(var(--surface)); }
+  .text-app { color: rgb(var(--text)); }
+  .text-app-2 { color: rgb(var(--text-2)); }
+  .btn-primary { @apply px-4 py-2 rounded-lg text-white shadow-accent transition hover:brightness-110; background-color: rgb(var(--primary)); }
+  .btn-secondary { @apply px-4 py-2 rounded-lg border transition; border-color: rgb(var(--accent)); color: rgb(var(--text)); }
+}
+
+html, body, #root { height: 100%; }
